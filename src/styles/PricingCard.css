@@ -1,0 +1,35 @@
+.pricing-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  background: white;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.pricing-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card-3d {
+  background: #eff6ff;
+  border-color: #93c5fd;
+}
+
+.pricing-card-3d:hover{
+    transform: perspective(1000px) rotateY(15deg);
+}
+
+.pricing-card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.pricing-card-price {
+  font-size: 1.25rem;
+  color: #2563eb;
+  font-weight: bold;
+}

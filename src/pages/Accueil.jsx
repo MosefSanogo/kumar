@@ -1,0 +1,255 @@
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Hero from "../components/Hero";
+import SectionTitle from "../components/SectionTitle";
+import Card from "../components/Card";
+import PricingCard from "../components/PricingCard";
+import ProjectCard from "../components/ProjectCard";
+import Button from "../components/Button";
+import { Ruler, Box, Wallet, Users, Home, HardHat, BarChart3, Cuboid, Building2, Phone, Mail } from 'lucide-react';
+import "./Accueil.css";
+
+const Accueil = () => {
+    // Données des points forts
+    const pointsForts = [
+        { Icon: Ruler, title: "Plans modernes et optimisés", description: "Design contemporain et fonctionnel" },
+        { Icon: Box, title: "Modélisation 3D réaliste", description: "Visualisation avant construction" },
+        { Icon: Wallet, title: "Tarifs accessibles", description: "Qualité au meilleur prix" },
+        { Icon: Users, title: "Accompagnement personnalisé", description: "Suivi de A à Z" },
+    ];
+
+    // Données des services
+    const services = [
+        { Icon: Home, title: "Conception de plans 2D", description: "Réalisation de plans architecturaux précis pour tous types de logements." },
+        { Icon: Cuboid, title: "Modélisation 3D", description: "Visualisation réaliste de votre projet avant construction." },
+        { Icon: HardHat, title: "Étude de projets", description: "Analyse technique et optimisation de l'espace." },
+        { Icon: BarChart3, title: "Suivi et conseils", description: "Assistance pour la réalisation de vos projets." },
+    ];
+
+    // Données des plans 2D
+    const plans2D = [
+        { title: "F1 (Studio)", price: "100€" },
+        { title: "F2 (1 chambre)", price: "150€" },
+        { title: "F3 (2 chambres)", price: "200€" },
+        { title: "F4 (3 chambres)", price: "300€" },
+        { title: "F5 (Villa)", price: "400€" },
+    ];
+
+    // Données des plans 3D
+    const plans3D = [
+        { title: "F1 3D", price: "200€", is3D: true },
+        { title: "F2 3D", price: "300€", is3D: true },
+        { title: "F3 3D", price: "400€", is3D: true },
+        { title: "F4 3D", price: "600€", is3D: true },
+        { title: "F5 3D", price: "800€+", is3D: true },
+    ];
+
+    // Options supplémentaires
+    const options = [
+        { level: "R+1", price: "+100€" },
+        { level: "R+2", price: "+200€" },
+        { level: "R+3", price: "+300€" },
+    ];
+
+    // Projets
+    const projets = [
+        {
+            title: "Maison moderne F3",
+            description: "Plan 2D + rendu 3D - Une maison familiale alliant modernité et fonctionnalité.",
+            imageUrl: "https://via.placeholder.com/400x300?text=Maison+F3"
+        },
+        {
+            title: "Villa contemporaine F5",
+            description: "Design moderne avec étage - Villa spacieuse aux lignes épurées.",
+            imageUrl: "https://via.placeholder.com/400x300?text=Villa+F5"
+        },
+        {
+            title: "Projet personnel sur mesure",
+            description: "Illustration de notre savoir-faire en conception architecturale et modélisation 3D.",
+            imageUrl: "https://via.placeholder.com/400x300?text=Projet+Personnel"
+        },
+    ];
+
+
+    return (
+        <div>
+            <Header />
+
+            {/* Section HERO */}
+            <section id="hero">
+                <Hero
+                    title="KUMAR Construction"
+                    subtitle="Conception de plans modernes & réalisation de projets sur mesure"
+                    description="KUMAR Construction est spécialisée dans la conception de plans architecturaux 2D et 3D, adaptés aux besoins des particuliers et des professionnels. Nous transformons vos idées en projets concrets, modernes et fonctionnels."
+                    button1Text="Voir nos plans"
+                    button1Link="#plans"
+                />
+            </section>
+
+            {/* Section Présentation */}
+            <section className="presentation">
+                <div className="container">
+                    <SectionTitle>Qui sommes-nous ?</SectionTitle>
+                    <p className="presentation-text">
+                        Nous proposons des solutions complètes allant du simple plan 2D à la modélisation 3D avancée,
+                        avec des options adaptées à tous types de projets (F1 à F5, R+1 à R+3).
+                    </p>
+                </div>
+            </section>
+
+            {/* Section Points forts */}
+            <section className="points-forts">
+                <div className="container">
+                    <SectionTitle>Nos points forts</SectionTitle>
+                    <div className="points-forts-grid">
+                        {pointsForts.map((point, index) => (
+                            <Card
+                                key={index}
+                                icon={point.Icon}
+                                title={point.title}
+                                description={point.description}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Section SERVICES */}
+            <section id="services" className="services-section">
+                <div className="container">
+                    <SectionTitle>Nos Services</SectionTitle>
+                    <div className="services-grid">
+                        {services.map((service, index) => (
+                            <Card
+                                key={index}
+                                icon={service.Icon}
+                                title={service.title}
+                                description={service.description}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Section PLANS & TARIFS */}
+            <section id="plans" className="plans-section">
+                <div className="container">
+                    <SectionTitle>Nos Plans et Tarifs</SectionTitle>
+
+                    <div className="plans-category">
+                        <h3 className="category-title" style={{display:"flex",justifyContent:"center",alignItems:"center", gap: 10}}>
+                            <Home size={28} style={{ display: 'inline', marginRight: '8px' }} />
+                            Plans 2D
+                        </h3>
+                        <div className="plans-grid">
+                            {plans2D.map((plan, index) => (
+                                <PricingCard key={index} title={plan.title} price={plan.price} />
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="plans-category" >
+                        <h3 className="category-title" style={{display:"flex",justifyContent:"center",alignItems:"center", gap: 10}}>
+                            <Building2 size={28} style={{ display: 'inline', marginRight: '8px' }} />
+                            Plans 3D
+                        </h3>
+                        <div className="plans-grid">
+                            {plans3D.map((plan, index) => (
+                                <PricingCard key={index} title={plan.title} price={plan.price} is3D={plan.is3D} />
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="options-section">
+                        <h3 className="category-title" style={{display:"flex",justifyContent:"center",alignItems:"center", gap: 10}}>
+                            <HardHat size={28} style={{ display: 'inline', marginRight: '8px' }} />
+                            Options supplémentaires
+                        </h3>
+                        <div className="options-grid">
+                            {options.map((option, index) => (
+                                <div key={index} className="option-card">
+                                    <span className="option-level">{option.level}</span>
+                                    <span className="option-price">{option.price}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <p className="disclaimer">Les tarifs peuvent varier selon la complexité du projet.</p>
+                </div>
+            </section>
+
+            {/* Section PROJETS */}
+            <section id="projets" className="projets-section">
+                <div className="container">
+                    <SectionTitle>Nos Réalisations</SectionTitle>
+                    <div className="projets-grid">
+                        {projets.map((projet, index) => (
+                            <ProjectCard
+                                key={index}
+                                title={projet.title}
+                                description={projet.description}
+                                imageUrl={projet.imageUrl}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Section À PROPOS */}
+            <section id="apropos" className="apropos-section">
+                <div className="container">
+                    <SectionTitle>À propos de nous</SectionTitle>
+                    <div className="apropos-content">
+                        <p className="apropos-text">
+                            KUMAR Construction est une entreprise spécialisée dans la conception de plans architecturaux modernes.
+                            Nous mettons notre expertise au service de vos projets pour garantir qualité, précision et satisfaction.
+                        </p>
+                        <div className="apropos-values">
+                            <div className="value-item">
+                                <h3>🎯 Notre mission</h3>
+                                <p>Transformer vos idées en espaces fonctionnels et esthétiques.</p>
+                            </div>
+                            <div className="value-item">
+                                <h3>💡 Notre expertise</h3>
+                                <p>Plusieurs années d'expérience en conception 2D et 3D.</p>
+                            </div>
+                            <div className="value-item">
+                                <h3>🤝 Notre engagement</h3>
+                                <p>Un accompagnement personnalisé à chaque étape de votre projet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Section CONTACT */}
+            <section id="contact" className="contact-section">
+                <div className="container">
+                    <SectionTitle>Contactez-nous</SectionTitle>
+
+                    <div className="contact-content">
+                        <div className="contact-info">
+                            <h3>Nos coordonnées</h3>
+                            <div className="info-item">
+                                <span className="info-icon"><Mail size={24}/> </span>
+                                <p>contact@kumar.com</p>
+                            </div>
+                            <div className="info-item">
+                                <span className="info-icon"><Phone size={24}/> </span>
+                                <p>+223 61 34 98 97</p>
+                            </div>
+                            <p className="contact-text">
+                                Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <Footer />
+        </div>
+    );
+};
+
+export default Accueil;

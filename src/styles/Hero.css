@@ -1,0 +1,223 @@
+.hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white;
+    padding: 80px 20px 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    opacity: 0.95;
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    margin-bottom: 32px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease 0.8s both;
+}
+
+/* Effet buildings */
+.buildings {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.1), transparent);
+    z-index: 1;
+}
+
+.building-icon {
+    color: rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+    animation: floatBuilding 3s ease-in-out infinite;
+}
+
+.building-icon:hover {
+    color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* Animations individuelles pour chaque icône */
+.building-icon:nth-child(1) { animation-delay: 0s; }
+.building-icon:nth-child(2) { animation-delay: 0.3s; }
+.building-icon:nth-child(3) { animation-delay: 0.6s; }
+.building-icon:nth-child(4) { animation-delay: 0.9s; }
+.building-icon:nth-child(5) { animation-delay: 1.2s; }
+.building-icon:nth-child(6) { animation-delay: 1.5s; }
+.building-icon:nth-child(7) { animation-delay: 1.8s; }
+.building-icon:nth-child(8) { animation-delay: 2.1s; }
+.building-icon:nth-child(9) { animation-delay: 2.4s; }
+.building-icon:nth-child(10) { animation-delay: 2.7s; }
+
+@keyframes floatBuilding {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Effet de poussière de construction */
+.construction-dust {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.dust {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: dustFloat 2s ease-out infinite;
+}
+
+.dust-1 {
+    left: 20%;
+    width: 4px;
+    height: 4px;
+    animation-delay: 0s;
+}
+
+.dust-2 {
+    left: 35%;
+    width: 6px;
+    height: 6px;
+    animation-delay: 0.7s;
+}
+
+.dust-3 {
+    left: 55%;
+    width: 3px;
+    height: 3px;
+    animation-delay: 1.4s;
+}
+.dust-4 {
+    left: 70%;
+    width: 4px;
+    height: 4px;
+    animation-delay: 2.1s;
+}
+.dust-3 {
+    left: 85%;
+    width: 6px;
+    height: 6px;
+    animation-delay: 2.8s;
+}
+
+@keyframes dustFloat {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-60px) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Animation fadeInUp */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Effet de vague de construction */
+.buildings::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: waveLine 3s ease-in-out infinite;
+}
+
+@keyframes waveLine {
+    0%, 100% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 20px 80px 20px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .buildings {
+        gap: 8px;
+    }
+    
+    .building-icon {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 480px) {
+    .building-icon {
+        transform: scale(0.6);
+    }
+    
+    .buildings {
+        gap: 5px;
+    }
+}
