@@ -8,4 +8,22 @@ body {
   font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: white;
   color: #1f2937;
+  background-color: #f5f5f5;
+}
+
+/* Classe réutilisable */
+.grid-bg {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+/* Version sombre pour le footer par exemple */
+.grid-bg-dark {
+    background-color: #1f2937;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
 }

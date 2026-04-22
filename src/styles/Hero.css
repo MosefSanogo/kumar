@@ -1,9 +1,48 @@
 .hero {
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+
+    /* On aligne les tailles avec l'ordre des images */
+    background-size: 40px 40px, 40px 40px, 100% 100%;
+
     color: white;
-    padding: 80px 20px 100px 20px;
+    padding: 100px 20px;
     position: relative;
     overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* On crée une ligne lumineuse horizontale */
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(255, 255, 255, 0.05) 45%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0.05) 55%,
+            transparent 100%);
+    background-size: 100% 20px;
+    /* Épaisseur de la ligne */
+    background-repeat: no-repeat;
+    z-index: 3;
+    pointer-events: none;
+    animation: laserScan 4s linear infinite;
+}
+
+@keyframes laserScan {
+    0% {
+        background-position: 0 -20px;
+    }
+
+    100% {
+        background-position: 0 100vh;
+    }
 }
 
 .hero-container {
@@ -15,9 +54,13 @@
 }
 
 .hero-title {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 16px;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    /* Plus serré pour un look pro */
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 20px;
     animation: fadeInUp 0.8s ease;
 }
 
@@ -56,13 +99,14 @@
     justify-content: center;
     gap: 15px;
     padding: 10px 20px;
-    background: linear-gradient(to top, rgba(0,0,0,0.1), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
     z-index: 1;
 }
 
 .building-icon {
     color: rgba(255, 255, 255, 0.15);
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
+    will-change: transform;
     animation: floatBuilding 3s ease-in-out infinite;
 }
 
@@ -72,21 +116,53 @@
 }
 
 /* Animations individuelles pour chaque icône */
-.building-icon:nth-child(1) { animation-delay: 0s; }
-.building-icon:nth-child(2) { animation-delay: 0.3s; }
-.building-icon:nth-child(3) { animation-delay: 0.6s; }
-.building-icon:nth-child(4) { animation-delay: 0.9s; }
-.building-icon:nth-child(5) { animation-delay: 1.2s; }
-.building-icon:nth-child(6) { animation-delay: 1.5s; }
-.building-icon:nth-child(7) { animation-delay: 1.8s; }
-.building-icon:nth-child(8) { animation-delay: 2.1s; }
-.building-icon:nth-child(9) { animation-delay: 2.4s; }
-.building-icon:nth-child(10) { animation-delay: 2.7s; }
+.building-icon:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.building-icon:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.building-icon:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.building-icon:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.building-icon:nth-child(5) {
+    animation-delay: 1.2s;
+}
+
+.building-icon:nth-child(6) {
+    animation-delay: 1.5s;
+}
+
+.building-icon:nth-child(7) {
+    animation-delay: 1.8s;
+}
+
+.building-icon:nth-child(8) {
+    animation-delay: 2.1s;
+}
+
+.building-icon:nth-child(9) {
+    animation-delay: 2.4s;
+}
+
+.building-icon:nth-child(10) {
+    animation-delay: 2.7s;
+}
 
 @keyframes floatBuilding {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-8px);
     }
@@ -107,40 +183,42 @@
     bottom: 0;
     background: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    animation: dustFloat 2s ease-out infinite;
+    animation: dustFloat 3s ease-out infinite;
 }
 
-.dust-1 {
-    left: 20%;
+.dust:nth-child(1) {
+    left: 10%;
     width: 4px;
     height: 4px;
     animation-delay: 0s;
 }
 
-.dust-2 {
-    left: 35%;
+.dust:nth-child(2) {
+    left: 30%;
     width: 6px;
     height: 6px;
-    animation-delay: 0.7s;
+    animation-delay: 1s;
 }
 
-.dust-3 {
-    left: 55%;
+.dust:nth-child(3) {
+    left: 50%;
     width: 3px;
     height: 3px;
-    animation-delay: 1.4s;
+    animation-delay: 2s;
 }
-.dust-4 {
+
+.dust:nth-child(4) {
     left: 70%;
+    width: 5px;
+    height: 5px;
+    animation-delay: 0.5s;
+}
+
+.dust:nth-child(5) {
+    left: 90%;
     width: 4px;
     height: 4px;
-    animation-delay: 2.1s;
-}
-.dust-3 {
-    left: 85%;
-    width: 6px;
-    height: 6px;
-    animation-delay: 2.8s;
+    animation-delay: 1.5s;
 }
 
 @keyframes dustFloat {
@@ -148,6 +226,7 @@
         transform: translateY(0) scale(1);
         opacity: 0.6;
     }
+
     100% {
         transform: translateY(-60px) scale(0);
         opacity: 0;
@@ -160,6 +239,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -174,15 +254,18 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     animation: waveLine 3s ease-in-out infinite;
 }
 
 @keyframes waveLine {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0;
         transform: scaleX(0);
     }
+
     50% {
         opacity: 1;
         transform: scaleX(1);
@@ -192,9 +275,9 @@
 /* Media Queries */
 @media (max-width: 768px) {
     .hero {
-        padding: 60px 20px 80px 20px;
+        padding: 90px 20px 80px 20px;
     }
-    
+
     .hero-title {
         font-size: 2rem;
     }
@@ -202,13 +285,20 @@
     .hero-subtitle {
         font-size: 1.125rem;
     }
-    
+
     .buildings {
         gap: 8px;
     }
-    
+
     .building-icon {
         transform: scale(0.8);
+    }
+
+    .hero-container {
+        max-width: 550px;
+        /* Un peu plus étroit pour forcer le texte à être centré et compact */
+        margin: 0 auto 32px auto;
+        line-height: 1.6;
     }
 }
 
@@ -216,7 +306,7 @@
     .building-icon {
         transform: scale(0.6);
     }
-    
+
     .buildings {
         gap: 5px;
     }

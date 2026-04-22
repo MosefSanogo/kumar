@@ -56,17 +56,17 @@ const Accueil = () => {
         {
             title: "Maison moderne F3",
             description: "Plan 2D + rendu 3D - Une maison familiale alliant modernité et fonctionnalité.",
-            imageUrl: "https://via.placeholder.com/400x300?text=Maison+F3"
+            imageUrl: "https://th.bing.com/th/id/R.c835f327306977e2d1f4d9f793fd4ac5?rik=yb8VPuVtt55s3A&pid=ImgRaw&r=0"
         },
         {
             title: "Villa contemporaine F5",
             description: "Design moderne avec étage - Villa spacieuse aux lignes épurées.",
-            imageUrl: "https://via.placeholder.com/400x300?text=Villa+F5"
+            imageUrl: "https://th.bing.com/th/id/R.3e4a5e26bd38d9aeeb14576d76fcf5c2?rik=tM1cCgBotrqwUw&pid=ImgRaw&r=0"
         },
         {
             title: "Projet personnel sur mesure",
             description: "Illustration de notre savoir-faire en conception architecturale et modélisation 3D.",
-            imageUrl: "https://via.placeholder.com/400x300?text=Projet+Personnel"
+            imageUrl: "https://www.bati-solar.fr/wp-content/uploads/2018/10/telecharger-logiciel-pour-meilleur-construire-sa-maison-en-3d-gratuit-.jpg"
         },
     ];
 
@@ -115,7 +115,7 @@ const Accueil = () => {
             </section>
 
             {/* Section SERVICES */}
-            <section id="services" className="services-section">
+            <section id="services" className="services-section grid-bg">
                 <div className="container">
                     <SectionTitle>Nos Services</SectionTitle>
                     <div className="services-grid">

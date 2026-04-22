@@ -17,8 +17,10 @@
   border-color: #93c5fd;
 }
 
-.pricing-card-3d:hover{
-    transform: perspective(1000px) rotateY(15deg);
+.pricing-card-3d:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(10deg);
+  border-color: #2563eb;
+  box-shadow: -10px 15px 30px rgba(37, 99, 235, 0.2);
 }
 
 .pricing-card-title {
@@ -32,4 +34,33 @@
   font-size: 1.25rem;
   color: #2563eb;
   font-weight: bold;
+}
+
+
+
+/* Un petit séparateur subtil */
+.pricing-divider {
+  width: 40px;
+  height: 2px;
+  background: #e5e7eb;
+  margin: 0 auto 10px auto;
+  transition: width 0.3s ease;
+}
+
+.pricing-card:hover .pricing-divider {
+  width: 60px;
+  background: #2563eb;
+}
+
+.pricing-card-price {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.price-unit {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: normal;
+  text-transform: uppercase;
 }

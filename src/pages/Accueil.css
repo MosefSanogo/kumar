@@ -12,6 +12,7 @@ section {
 }
 #hero{
     padding: 0;
+    margin: 0;
 }
 /* Présentation */
 .presentation {
@@ -90,6 +91,7 @@ section {
   border-radius: 8px;
   text-align: center;
   min-width: 120px;
+  border: 1px solid #ddd;
 }
 
 .option-level {
@@ -219,7 +221,10 @@ section {
   section {
     padding: 50px 0;
   }
-  
+  #hero{
+    padding: 0;
+    margin: 0;
+}
   .contact-content {
     grid-template-columns: 1fr;
     gap: 30px;
