@@ -9,5 +9,11 @@ export default defineConfig({
     port: 5174,
     strictPort: true,
     base: './',
+  },
+  base: '/kumar/', // IMPORTANT: remplacez par votre vrai nom de repo
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true
   }
 })

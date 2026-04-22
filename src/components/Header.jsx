@@ -43,7 +43,7 @@ const Header = () => {
                 >
                     {showLogo ? (
                         <img
-                            src="/assets/logo.png"
+                            src="assets/logo.png"
                             alt="Kumar Construction Logo"
                             className="header-logo-img"
                         />)
