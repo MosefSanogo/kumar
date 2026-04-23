@@ -1,66 +1,155 @@
-.pricing-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 20px;
-  background: white;
-  transition: all 0.3s ease;
+.section-subtitle {
   text-align: center;
+  color: #64748b;
+  margin-bottom: 50px;
 }
 
-.pricing-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.plans-list-container {
+  max-width: 850px;
+  margin: 0 auto;
 }
 
-.pricing-card-3d {
-  background: #eff6ff;
-  border-color: #93c5fd;
-}
-
-.pricing-card-3d:hover {
-  transform: perspective(1000px) rotateX(5deg) rotateY(10deg);
-  border-color: #2563eb;
-  box-shadow: -10px 15px 30px rgba(37, 99, 235, 0.2);
-}
-
-.pricing-card-title {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 12px;
-  color: #1f2937;
-}
-
-.pricing-card-price {
-  font-size: 1.25rem;
-  color: #2563eb;
-  font-weight: bold;
-}
-
-
-
-/* Un petit séparateur subtil */
-.pricing-divider {
-  width: 40px;
-  height: 2px;
-  background: #e5e7eb;
-  margin: 0 auto 10px auto;
-  transition: width 0.3s ease;
-}
-
-.pricing-card:hover .pricing-divider {
-  width: 60px;
-  background: #2563eb;
-}
-
-.pricing-card-price {
+.plans-header-row {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  justify-content: space-between;
+  padding: 0 20px 15px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 20px;
+}
+.plan-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+
 }
 
-.price-unit {
-  font-size: 0.75rem;
-  color: #6b7280;
-  font-weight: normal;
-  text-transform: uppercase;
+.plan-row:hover {
+  background: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.plan-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.plan-icon-box {
+  color: #3b82f6;
+  background: #eff6ff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.plan-type {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 1.1rem;
+}
+
+.plan-details {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.tech-badges {
+  display: flex;
+  gap: 8px;
+}
+
+.badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #e2e8f0;
+  color: #64748b;
+}
+
+.badge.blue {
+  background: #3b82f6;
+  color: white;
+}
+
+.quote-btn {
+  background: #1e293b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.quote-btn:hover {
+  opacity: 0.9;
+}
+
+
+/* --- Media Queries pour Mobiles et Tablettes --- */
+
+@media (max-width: 768px) {
+  .plans-header-row {
+    display: none; /* On cache l'en-tête de colonnes qui n'a plus de sens en colonne */
+  }
+
+  .plan-row {
+    flex-direction: column; /* Empilement vertical */
+    align-items: flex-start; /* Aligné à gauche */
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .plan-details {
+    width: 100%; /* Prend toute la largeur */
+    justify-content: space-between; /* Aligne les badges à gauche et le bouton à droite */
+    gap: 10px;
+  }
+
+  .plan-type {
+    font-size: 1rem;
+  }
+
+  .options-pills {
+    flex-wrap: wrap; /* Les pilules passent à la ligne si besoin */
+    justify-content: center;
+  }
+
+  .option-pill {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .plan-details {
+    flex-direction: column; /* Sur très petits écrans, on empile même le bouton */
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .quote-btn {
+    width: 100%; /* Le bouton prend toute la largeur pour être plus facile à cliquer */
+    text-align: center;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
 }

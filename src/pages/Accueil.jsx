@@ -6,7 +6,7 @@ import Card from "../components/Card";
 import PricingCard from "../components/PricingCard";
 import ProjectCard from "../components/ProjectCard";
 import Button from "../components/Button";
-import { Ruler, Box, Wallet, Users, Home, HardHat, BarChart3, Cuboid, Building2, Phone, Mail } from 'lucide-react';
+import { Ruler, Box, Wallet, Users, Home, HardHat, BarChart3, Cuboid, Building2, Phone, Mail, Building } from 'lucide-react';
 import "./Accueil.css";
 
 const Accueil = () => {
@@ -27,28 +27,50 @@ const Accueil = () => {
     ];
 
     // Données des plans 2D
-    const plans2D = [
-        { title: "F1 (Studio)", price: "100€" },
-        { title: "F2 (1 chambre)", price: "150€" },
-        { title: "F3 (2 chambres)", price: "200€" },
-        { title: "F4 (3 chambres)", price: "300€" },
-        { title: "F5 (Villa)", price: "400€" },
+    const allPlans = [
+        {
+            id: 1,
+            title: "F1 (Studio)",
+            has2D: true,
+            has3D: true,
+            description: "Idéal pour investissement locatif ou petite dépendance."
+        },
+        {
+            id: 2,
+            title: "F2 (1 chambre)",
+            has2D: true,
+            has3D: true,
+            description: "Plan optimisé pour couple ou personne seule."
+        },
+        {
+            id: 3,
+            title: "F3 (2 chambres)",
+            has2D: true,
+            has3D: true,
+            description: "Maison familiale standard avec séjour spacieux."
+        },
+        {
+            id: 4,
+            title: "F4 (3 chambres)",
+            has2D: true,
+            has3D: true,
+            description: "Conception spacieuse avec suite parentale."
+        },
+        {
+            id: 5,
+            title: "F5 (Villa)",
+            has2D: true,
+            has3D: true,
+            description: "Grande villa avec garage et prestations haut de gamme."
+        }
     ];
 
-    // Données des plans 3D
-    const plans3D = [
-        { title: "F1 3D", price: "200€", is3D: true },
-        { title: "F2 3D", price: "300€", is3D: true },
-        { title: "F3 3D", price: "400€", is3D: true },
-        { title: "F4 3D", price: "600€", is3D: true },
-        { title: "F5 3D", price: "800€+", is3D: true },
-    ];
 
     // Options supplémentaires
     const options = [
-        { level: "R+1", price: "+100€" },
-        { level: "R+2", price: "+200€" },
-        { level: "R+3", price: "+300€" },
+        { id: 'r1', level: "R+1", label: "Un étage" },
+        { id: 'r2', level: "R+2", label: "Deux étages" },
+        { id: 'r3', level: "R+3", label: "Trois étages" }
     ];
 
     // Projets
@@ -134,34 +156,34 @@ const Accueil = () => {
             {/* Section PLANS & TARIFS */}
             <section id="plans" className="plans-section">
                 <div className="container">
-                    <SectionTitle>Nos Plans et Tarifs</SectionTitle>
+                    <SectionTitle>Nos Solutions de Conception</SectionTitle>
+                    <p className="section-subtitle">Sélectionnez le type de projet pour obtenir une étude personnalisée.</p>
 
-                    <div className="plans-category">
-                        <h3 className="category-title" style={{display:"flex",justifyContent:"center",alignItems:"center", gap: 10}}>
-                            <Home size={28} style={{ display: 'inline', marginRight: '8px' }} />
-                            Plans 2D
-                        </h3>
-                        <div className="plans-grid">
-                            {plans2D.map((plan, index) => (
-                                <PricingCard key={index} title={plan.title} price={plan.price} />
-                            ))}
+                    <div className="plans-list-container">
+                        {/* En-tête informatif */}
+                        <div className="plans-header-row">
+                            <span>Configurations disponibles</span>
+                            <div className="capabilities-label">
+                                <span>Livrables</span>
+                            </div>
                         </div>
+
+                        {/* Liste des prestations */}
+                        {
+                            allPlans.map((plan) => (
+                                <PricingCard
+                                    key={plan.id}
+                                    title={plan.title}
+                                    has2D={!plan.has2D}
+                                    has3D={plan.has3D}
+                                />
+                            ))
+                        }
                     </div>
 
-                    <div className="plans-category" >
-                        <h3 className="category-title" style={{display:"flex",justifyContent:"center",alignItems:"center", gap: 10}}>
-                            <Building2 size={28} style={{ display: 'inline', marginRight: '8px' }} />
-                            Plans 3D
-                        </h3>
-                        <div className="plans-grid">
-                            {plans3D.map((plan, index) => (
-                                <PricingCard key={index} title={plan.title} price={plan.price} is3D={plan.is3D} />
-                            ))}
-                        </div>
-                    </div>
-
+                    {/* Section Options (Niveaux de construction) */}
                     <div className="options-section">
-                        <h3 className="category-title" style={{display:"flex",justifyContent:"center",alignItems:"center", gap: 10}}>
+                        <h3 className="category-title" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 10 }}>
                             <HardHat size={28} style={{ display: 'inline', marginRight: '8px' }} />
                             Options supplémentaires
                         </h3>
@@ -169,13 +191,14 @@ const Accueil = () => {
                             {options.map((option, index) => (
                                 <div key={index} className="option-card">
                                     <span className="option-level">{option.level}</span>
-                                    <span className="option-price">{option.price}</span>
+                                    <span className="option-label">{option.label}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
-
-                    <p className="disclaimer">Les tarifs peuvent varier selon la complexité du projet.</p>
+                    <div className="disclaimer">
+                        <p>Chaque projet d'ingénierie est unique. Contactez-nous pour un devis sur-mesure.</p>
+                    </div>
                 </div>
             </section>
 
@@ -232,11 +255,11 @@ const Accueil = () => {
                         <div className="contact-info">
                             <h3>Nos coordonnées</h3>
                             <div className="info-item">
-                                <span className="info-icon"><Mail size={24}/> </span>
+                                <span className="info-icon"><Mail size={24} /> </span>
                                 <p>contact@kumar.com</p>
                             </div>
                             <div className="info-item">
-                                <span className="info-icon"><Phone size={24}/> </span>
+                                <span className="info-icon"><Phone size={24} /> </span>
                                 <p>+223 61 34 98 97</p>
                             </div>
                             <p className="contact-text">
