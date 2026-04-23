@@ -15,7 +15,7 @@ const Footer = () => {
           <p style={{display:"flex",alignItems:"center", gap: 10}}><Phone size={24}/><span>+223 61 34 98 97</span></p>
         </div>
         <div className="footer-bottom">
-          <p>&copy; Développé par Mohamed Sanogo. Tous droits réservés.</p>
+          <p>&copy; Kumar-Construction. Tous droits réservés.</p>
         </div>
       </div>
     </footer>
