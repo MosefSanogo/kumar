@@ -34,7 +34,6 @@ const Projets = () => {
               <ProjectCard
                 key={index}
                 title={projet.title}
-                description={projet.description}
                 imageUrl={projet.imageUrl}
               />
             ))}

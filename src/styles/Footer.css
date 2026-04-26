@@ -1,7 +1,11 @@
 .footer {
-  background: #1f2937;
-  color: white;
   padding: 48px 20px 24px;
+  background: 
+  linear-gradient(rgba(16, 16, 16, 0.858), rgba(29, 29, 29, 0.863)),
+  url("C:\Users\USER\Documents\Le-Havre\Site\Kumar\kumar-construction\public\assets\footer.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .footer-container {
@@ -29,12 +33,17 @@
   color: #d1d5db;
   line-height: 1.6;
   margin: 8px 0;
+  font-weight: bold;
 }
 
 .footer-bottom {
-  border-top: 1px solid #374151;
+  border-top: 1px solid #ccc;
   padding-top: 24px;
   text-align: center;
-  color: #9ca3af;
+  color: #fff;
   font-size: 0.875rem;
+}
+
+.footer-logo img{
+  width: 300px;
 }

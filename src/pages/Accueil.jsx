@@ -8,89 +8,20 @@ import ProjectCard from "../components/ProjectCard";
 import Button from "../components/Button";
 import { Ruler, Box, Wallet, Users, Home, HardHat, BarChart3, Cuboid, Building2, Phone, Mail, Building } from 'lucide-react';
 import "./Accueil.css";
+import { useState } from "react";
+import { di, plans, st, visuels } from "../data/data";
 
 const Accueil = () => {
-    // Données des points forts
-    const pointsForts = [
-        { Icon: Ruler, title: "Plans modernes et optimisés", description: "Design contemporain et fonctionnel" },
-        { Icon: Box, title: "Modélisation 3D réaliste", description: "Visualisation avant construction" },
-        { Icon: Wallet, title: "Tarifs accessibles", description: "Qualité au meilleur prix" },
-        { Icon: Users, title: "Accompagnement personnalisé", description: "Suivi de A à Z" },
-    ];
+    const [active, setActive] = useState(1)
 
     // Données des services
     const services = [
         { Icon: Home, title: "Conception de plans 2D", description: "Réalisation de plans architecturaux précis pour tous types de logements." },
-        { Icon: Cuboid, title: "Modélisation 3D", description: "Visualisation réaliste de votre projet avant construction." },
+        { Icon: Cuboid, title: "Modélisation 3D & Desin intérieur", description: "Visualisation réaliste de votre projet avant construction." },
         { Icon: HardHat, title: "Étude de projets", description: "Analyse technique et optimisation de l'espace." },
         { Icon: BarChart3, title: "Suivi et conseils", description: "Assistance pour la réalisation de vos projets." },
     ];
 
-    // Données des plans 2D
-    const allPlans = [
-        {
-            id: 1,
-            title: "F1 (Studio)",
-            has2D: true,
-            has3D: true,
-            description: "Idéal pour investissement locatif ou petite dépendance."
-        },
-        {
-            id: 2,
-            title: "F2 (1 chambre)",
-            has2D: true,
-            has3D: true,
-            description: "Plan optimisé pour couple ou personne seule."
-        },
-        {
-            id: 3,
-            title: "F3 (2 chambres)",
-            has2D: true,
-            has3D: true,
-            description: "Maison familiale standard avec séjour spacieux."
-        },
-        {
-            id: 4,
-            title: "F4 (3 chambres)",
-            has2D: true,
-            has3D: true,
-            description: "Conception spacieuse avec suite parentale."
-        },
-        {
-            id: 5,
-            title: "F5 (Villa)",
-            has2D: true,
-            has3D: true,
-            description: "Grande villa avec garage et prestations haut de gamme."
-        }
-    ];
-
-
-    // Options supplémentaires
-    const options = [
-        { id: 'r1', level: "R+1", label: "Un étage" },
-        { id: 'r2', level: "R+2", label: "Deux étages" },
-        { id: 'r3', level: "R+3", label: "Trois étages" }
-    ];
-
-    // Projets
-    const projets = [
-        {
-            title: "Maison moderne F3",
-            description: "Plan 2D + rendu 3D - Une maison familiale alliant modernité et fonctionnalité.",
-            imageUrl: "https://th.bing.com/th/id/R.c835f327306977e2d1f4d9f793fd4ac5?rik=yb8VPuVtt55s3A&pid=ImgRaw&r=0"
-        },
-        {
-            title: "Villa contemporaine F5",
-            description: "Design moderne avec étage - Villa spacieuse aux lignes épurées.",
-            imageUrl: "https://th.bing.com/th/id/R.3e4a5e26bd38d9aeeb14576d76fcf5c2?rik=tM1cCgBotrqwUw&pid=ImgRaw&r=0"
-        },
-        {
-            title: "Projet personnel sur mesure",
-            description: "Illustration de notre savoir-faire en conception architecturale et modélisation 3D.",
-            imageUrl: "https://www.bati-solar.fr/wp-content/uploads/2018/10/telecharger-logiciel-pour-meilleur-construire-sa-maison-en-3d-gratuit-.jpg"
-        },
-    ];
 
 
     return (
@@ -101,10 +32,10 @@ const Accueil = () => {
             <section id="hero">
                 <Hero
                     title="KUMAR Construction"
-                    subtitle="Conception de plans modernes & réalisation de projets sur mesure"
-                    description="KUMAR Construction est spécialisée dans la conception de plans architecturaux 2D et 3D, adaptés aux besoins des particuliers et des professionnels. Nous transformons vos idées en projets concrets, modernes et fonctionnels."
-                    button1Text="Voir nos plans"
-                    button1Link="#plans"
+                    subtitle=""
+                    description="KUMAR Construction vous accompagne dans la conception, l'étude et la réalisation de vos projets de construction, de l’idée initiale jusqu’au chantier."
+                    button1Text="Voir nos projets"
+                    button1Link="#projets"
                 />
             </section>
 
@@ -113,13 +44,13 @@ const Accueil = () => {
                 <div className="container">
                     <SectionTitle>Qui sommes-nous ?</SectionTitle>
                     <p className="presentation-text">
-                        Nous proposons des solutions complètes allant du simple plan 2D à la modélisation 3D avancée,
-                        avec des options adaptées à tous types de projets (F1 à F5, R+1 à R+3).
+                        Notre objectif est simple : transformer vos idées en projets concrets, fiables et optimisés.
+                        Grâce à une maîtrise technique et une vision globale du génie civil, nous assurons des solutions adaptées à chaque besoin, que vous soyez particulier, promoteur ou professionnel.
                     </p>
                 </div>
             </section>
 
-            {/* Section Points forts */}
+            {/* Section Points forts
             <section className="points-forts">
                 <div className="container">
                     <SectionTitle>Nos points forts</SectionTitle>
@@ -134,7 +65,7 @@ const Accueil = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Section SERVICES */}
             <section id="services" className="services-section grid-bg">
@@ -153,14 +84,14 @@ const Accueil = () => {
                 </div>
             </section>
 
-            {/* Section PLANS & TARIFS */}
+            {/* Section PLANS & TARIFS 
             <section id="plans" className="plans-section">
                 <div className="container">
                     <SectionTitle>Nos Solutions de Conception</SectionTitle>
                     <p className="section-subtitle">Sélectionnez le type de projet pour obtenir une étude personnalisée.</p>
 
                     <div className="plans-list-container">
-                        {/* En-tête informatif */}
+                        {/* En-tête informatif 
                         <div className="plans-header-row">
                             <span>Configurations disponibles</span>
                             <div className="capabilities-label">
@@ -168,7 +99,7 @@ const Accueil = () => {
                             </div>
                         </div>
 
-                        {/* Liste des prestations */}
+                        {/* Liste des prestations 
                         {
                             allPlans.map((plan) => (
                                 <PricingCard
@@ -181,7 +112,7 @@ const Accueil = () => {
                         }
                     </div>
 
-                    {/* Section Options (Niveaux de construction) */}
+                    {/* Section Options (Niveaux de construction) 
                     <div className="options-section">
                         <h3 className="category-title" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 10 }}>
                             <HardHat size={28} style={{ display: 'inline', marginRight: '8px' }} />
@@ -201,13 +132,67 @@ const Accueil = () => {
                     </div>
                 </div>
             </section>
+            */}
 
             {/* Section PROJETS */}
             <section id="projets" className="projets-section">
                 <div className="container">
-                    <SectionTitle>Nos Réalisations</SectionTitle>
+                    <SectionTitle>Nos Projets</SectionTitle>
+                    <div className="tab">
+                        <Button
+                            variant={active === 1 ? "primary" : "secondary"}
+                            title={"Plans"}
+                            onClick={() => setActive(1)}>
+                            2D
+                        </Button>
+                        <Button
+                            variant={active === 2 ? "primary" : "secondary"}
+                            title={"Visuel 3D"}
+                            onClick={() => setActive(2)}
+                        >
+                            3D
+                        </Button>
+                        <Button
+                            variant={active === 3 ? "primary" : "secondary"}
+                            title={"Design intérieur"}
+                            onClick={() => setActive(3)}
+                        >
+                            DI
+                        </Button>
+                        <Button
+                            variant={active === 4 ? "primary" : "secondary"}
+                            title={"Structure"}
+                            onClick={() => setActive(4)}
+                        >
+                            ST
+                        </Button>
+                    </div>
                     <div className="projets-grid">
-                        {projets.map((projet, index) => (
+                        { active === 1 && plans.map((projet, index) => (
+                            <ProjectCard
+                                key={index}
+                                title={projet.title}
+                                description={projet.description}
+                                imageUrl={projet.imageUrl}
+                            />
+                        ))}
+                        { active === 2 && visuels.map((projet, index) => (
+                            <ProjectCard
+                                key={index}
+                                title={projet.title}
+                                description={projet.description}
+                                imageUrl={projet.imageUrl}
+                            />
+                        ))}
+                        { active === 3 && di.map((projet, index) => (
+                            <ProjectCard
+                                key={index}
+                                title={projet.title}
+                                description={projet.description}
+                                imageUrl={projet.imageUrl}
+                            />
+                        ))}
+                        { active === 4 && st.map((projet, index) => (
                             <ProjectCard
                                 key={index}
                                 title={projet.title}
@@ -219,7 +204,7 @@ const Accueil = () => {
                 </div>
             </section>
 
-            {/* Section À PROPOS */}
+            {/* Section À PROPOS 
             <section id="apropos" className="apropos-section">
                 <div className="container">
                     <SectionTitle>À propos de nous</SectionTitle>
@@ -244,7 +229,7 @@ const Accueil = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>*/}
 
             {/* Section CONTACT */}
             <section id="contact" className="contact-section">
@@ -256,11 +241,19 @@ const Accueil = () => {
                             <h3>Nos coordonnées</h3>
                             <div className="info-item">
                                 <span className="info-icon"><Mail size={24} /> </span>
-                                <p>contact@kumar.com</p>
+                                <p>kumar.construction45@gmail.com</p>
                             </div>
                             <div className="info-item">
                                 <span className="info-icon"><Phone size={24} /> </span>
                                 <p>+223 61 34 98 97</p>
+                            </div>
+                            <div className="info-item">
+                                <span className="info-icon"><Phone size={24} /> </span>
+                                <p>+223 70 06 40 23</p>
+                            </div>
+                            <div className="info-item">
+                                <span className="info-icon"><Phone size={24} /> </span>
+                                <p>+33 7 45 52 32 64</p>
                             </div>
                             <p className="contact-text">
                                 Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.

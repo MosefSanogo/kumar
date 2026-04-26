@@ -2,7 +2,7 @@
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        linear-gradient(135deg, #5f6b8b 0%, #bdd3f7 100%);
 
     /* On aligne les tailles avec l'ordre des images */
     background-size: 40px 40px, 40px 40px, 100% 100%;

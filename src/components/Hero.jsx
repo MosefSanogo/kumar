@@ -32,7 +32,13 @@ const Hero = ({ title, subtitle, description, button1Text, button1Link, button2T
     return (
         <section className="hero">
             <div className="hero-container">
-                <h1 className="hero-title">{title}</h1>
+                <div className="hero-title">
+                    <img
+                            src="assets/logo1.png"
+                            alt="Kumar Construction Logo"
+                            className="header-logo-img1"
+                        />
+                </div>
                 <p className="hero-subtitle">{subtitle}</p>
                 <p className="hero-description">{description}</p>
                 <div className="hero-buttons">

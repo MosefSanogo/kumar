@@ -3,7 +3,6 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  overflow: hidden;
 }
 
 /* Sections communes */
@@ -213,6 +212,13 @@ section {
   border-top: 1px solid #e5e7eb;
   color: #6b7280;
   font-style: italic;
+}
+.tab{
+  margin-bottom: 25px;
+}
+.tab button{
+  border-radius: 0;
+  border-left: 1px solid #ddd;
 }
 
 

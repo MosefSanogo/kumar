@@ -1,6 +1,6 @@
 import "../styles/ProjectCard.css";
 
-const ProjectCard = ({ title, description, imageUrl }) => {
+const ProjectCard = ({ title, imageUrl }) => {
   return (
     <div className="project-card">
       {imageUrl && (
@@ -8,10 +8,6 @@ const ProjectCard = ({ title, description, imageUrl }) => {
           <img src={imageUrl} alt={title} />
         </div>
       )}
-      <div className="project-card-content">
-        <h3 className="project-card-title">{title}</h3>
-        <p className="project-card-description">{description}</p>
-      </div>
     </div>
   );
 };

@@ -18,9 +18,7 @@ const Header = () => {
     const navItems = [
         { name: "Accueil", sectionId: "hero" },
         { name: "Services", sectionId: "services" },
-        { name: "Plans & Tarifs", sectionId: "plans" },
         { name: "Nos Projets", sectionId: "projets" },
-        { name: "À propos", sectionId: "apropos" },
     ];
 
     useEffect(() => {
@@ -47,8 +45,7 @@ const Header = () => {
                             alt="Kumar Construction Logo"
                             className="header-logo-img"
                         />)
-                        :
-                        <span className="logo-text" style={{color: isMenuOpen ? "#333" : ""}}>KUMAR</span>
+                        : ""
                     }
 
                 </div>
