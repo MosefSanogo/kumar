@@ -256,7 +256,7 @@ const Accueil = () => {
                                 <p>+33 7 45 52 32 64</p>
                             </div>
                             <p className="contact-text">
-                                Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.
+                                Contactez Kumar construction pour discuter de votre projet et obtenir un devis personnalisé.
                             </p>
                         </div>
                     </div>

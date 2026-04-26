@@ -19,6 +19,7 @@ const Header = () => {
         { name: "Accueil", sectionId: "hero" },
         { name: "Services", sectionId: "services" },
         { name: "Nos Projets", sectionId: "projets" },
+        { name: "Contact", sectionId: "contact" },
     ];
 
     useEffect(() => {
