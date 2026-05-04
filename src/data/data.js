@@ -22,7 +22,6 @@
         {title: "Plan",imageUrl: "assets/di8.jpeg"},
         {title: "Plan",imageUrl: "assets/di9.jpeg"},
         {title: "Plan",imageUrl: "assets/di10.jpeg"},
-        {title: "Plan",imageUrl: "assets/di11.jpeg"},
     ]
     export const st = [
         {title: "Plan",imageUrl: "assets/st.jpeg"},

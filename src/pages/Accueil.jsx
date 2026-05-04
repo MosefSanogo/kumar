@@ -17,7 +17,7 @@ const Accueil = () => {
     // Données des services
     const services = [
         { Icon: Home, title: "Conception de plans 2D", description: "Réalisation de plans architecturaux précis pour tous types de logements." },
-        { Icon: Cuboid, title: "Modélisation 3D & Desin intérieur", description: "Visualisation réaliste de votre projet avant construction." },
+        { Icon: Cuboid, title: "Modélisation 3D & Design intérieur", description: "Visualisation réaliste de votre projet avant construction." },
         { Icon: HardHat, title: "Étude de projets", description: "Analyse technique et optimisation de l'espace." },
         { Icon: BarChart3, title: "Suivi et conseils", description: "Assistance pour la réalisation de vos projets." },
     ];

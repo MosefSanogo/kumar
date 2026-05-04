@@ -20,7 +20,7 @@
 .project-card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
 
@@ -45,7 +45,5 @@
   line-height: 1.5;
 }
 @media (max-width: 768px) {
-    .project-card{
-        width: 90%;
-    }
+    
 }

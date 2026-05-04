@@ -12,5 +12,6 @@
 @media (max-width: 768px) {
   .projets-grid{
     gap: 0px;
+    justify-content: center;
   }
 }
