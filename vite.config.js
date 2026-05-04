@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // Le "base" à la racine est le plus important pour le déploiement
-  base: '/kumar/', 
+  base: '/', 
   
   server: {
     host: '0.0.0.0', 
